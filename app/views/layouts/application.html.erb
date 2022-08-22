@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="msg">
+    <% flash.each do |nome, mensagem| %>
+    <%= content_tag :div, mensagem, class: nome %>
+    <% end %>
+  </div>
+<%= yield %>
+
+</body>
+</html>

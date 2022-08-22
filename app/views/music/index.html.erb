@@ -1,0 +1,24 @@
+<div class="head">
+<h1>Selecione o arquivo yaml:</h1>
+<%= form_tag({action: :create}, multipart: true) do %>
+<%= file_field_tag 'file' %>
+<%= submit_tag 'Submit' %>
+<% end %>
+</div>
+<table>
+  <tr>
+    <th>Gênero</th>
+    <th>Artista</th>
+    <th>Album</th>
+    <th>Musica</th>
+  </tr>
+  <% @tracks.each do |t| %>
+  <tr>
+    <td> <%= t.parent.parent.parent.name %></td>
+    <td> <%= t.parent.parent.name %></td>
+    <td> <%= t.parent.name %></td>
+    <td> <%= t.name %></td>
+  </tr>
+  <% end %>
+
+</table>
